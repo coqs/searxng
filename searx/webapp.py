@@ -12,6 +12,7 @@ import os
 import sys
 import base64
 
+from flask_cors import CORS
 from timeit import default_timer
 from html import escape
 from io import StringIO
@@ -150,6 +151,7 @@ STATS_SORT_PARAMETERS = {
 
 # Flask app
 app = Flask(__name__, static_folder=settings['ui']['static_path'], template_folder=templates_path)
+CORS(app)
 
 app.jinja_env.trim_blocks = True
 app.jinja_env.lstrip_blocks = True
