@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: searxng
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    # expose the default searx port
+    ports:
+      - 8080
